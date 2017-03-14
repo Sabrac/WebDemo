@@ -4,17 +4,96 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title><asp:Literal runat="server" Text="<%$Resources:language, title%>" /></title>
+    <title>
+        <asp:Literal runat="server" Text="<%$Resources:language, title%>" /></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            
+        <div class="site_wrapper">
+            <!-- HEADER -->
+            <header id="header">
+
+                <!-- Top header bar -->
+                <div id="trueHeader">
+
+                    <div class="wrapper">
+
+                        <div class="container">
+
+                            <!-- Logo -->
+                            <div class="one_fourth"><a href="Default.aspx" id="logo"></a></div>
+
+                            <!-- Menu -->
+                            <asp:ContentPlaceHolder ID="horizon_menu" runat="server">
+                            </asp:ContentPlaceHolder>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- end header -->
+
+            <div class="clearfix"></div>
+
+            <div id="home">
+
+                <!-- Slider ======================================= -->
+
+                <div class="container_full">
+
+                    <asp:ContentPlaceHolder ID="full_width_banner" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <!-- end slider -->
+
+                <div class="clearfix"></div>
+
+                <div class="punch_text">
+
+                    <asp:ContentPlaceHolder ID="punch_text" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <!-- end punch text -->
+
+            </div>
+            <!-- end home -->
+
+            <div class="clearfix"></div>
+
+            <asp:ContentPlaceHolder ID="about" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- end about -->
+
+            <div class="clearfix"></div>
+
+            <asp:ContentPlaceHolder ID="services" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- end services -->
+
+            <div class="clearfix"></div>
+
+            <asp:ContentPlaceHolder ID="portfolio" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- end portfolio -->
+
+            <div class="clearfix"></div>
+
+            <asp:ContentPlaceHolder ID="contact" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- end contact -->
+
+            <a href="#" class="scrollup">Scroll</a><!-- end scroll to top of the page-->
+        </div>
+
+        <asp:ContentPlaceHolder ID="jsfiles" runat="server">
         </asp:ContentPlaceHolder>
-    </div>
     </form>
 </body>
 </html>
