@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{612C2B5D-35B5-4E29-8790-AC724FD4B8C8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo</RootNamespace>
+    <AssemblyName>Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\font-awesome\css\font-awesome.css" />
+    <Content Include="css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\responsive-leyouts.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="images\blog\avatar.jpg" />
+    <Content Include="images\blog\facebook.png" />
+    <Content Include="images\blog\flickr.png" />
+    <Content Include="images\blog\google-plus.png" />
+    <Content Include="images\blog\icon-by-user.png" />
+    <Content Include="images\blog\icon-category.png" />
+    <Content Include="images\blog\icon-comments.png" />
+    <Content Include="images\blog\linkedin.png" />
+    <Content Include="images\blog\people_img.jpg" />
+    <Content Include="images\blog\rss.png" />
+    <Content Include="images\blog\twitter.png" />
+    <Content Include="images\blog\vimeo-logo.png" />
+    <Content Include="images\blog\vimeo.png" />
+    <Content Include="images\blog\yahoo.png" />
+    <Content Include="images\blog\youtube-logo.png" />
+    <Content Include="images\blog\youtube.png" />
+    <Content Include="images\client-logo1.png" />
+    <Content Include="images\client-logo2.png" />
+    <Content Include="images\client-logo3.png" />
+    <Content Include="images\client-logo4.png" />
+    <Content Include="images\client-logo5.png" />
+    <Content Include="images\client-logo6.png" />
+    <Content Include="images\client-logo7.png" />
+    <Content Include="images\client-logo8.png" />
+    <Content Include="images\client-logo9.png" />
+    <Content Include="images\dashed-circle.png" />
+    <Content Include="images\dashed-circle2.png" />
+    <Content Include="images\elements\bg.png" />
+    <Content Include="images\elements\layout-five-boxed.png" />
+    <Content Include="images\elements\layout-five-full.png" />
+    <Content Include="images\elements\layout-four-boxed.png" />
+    <Content Include="images\elements\layout-one-boxed.png" />
+    <Content Include="images\elements\layout-three-boxed.png" />
+    <Content Include="images\elements\layout-two-boxed.png" />
+    <Content Include="images\layout-img01.jpg" />
+    <Content Include="images\layout-img02.jpg" />
+    <Content Include="images\layout-img03.jpg" />
+    <Content Include="images\layout-img04.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\opacity-line.png" />
+    <Content Include="images\scroll-top-arrow.png" />
+    <Content Include="images\siteimg-002.png" />
+    <Content Include="images\siteimg-joosa1.png" />
+    <Content Include="images\siteimg3.png" />
+    <Content Include="images\siteimg4.png" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="js\iosslider\common.css" />
+    <Content Include="js\iosslider\_lib\jquery-1.4.min.js" />
+    <Content Include="js\iosslider\_lib\jquery-1.7.min.js" />
+    <Content Include="js\iosslider\_lib\jquery-1.8.2.min.js" />
+    <Content Include="js\iosslider\_lib\jquery.easing-1.3.js" />
+    <Content Include="js\iosslider\_src\custom.js" />
+    <Content Include="js\iosslider\_src\jquery.iosslider.js" />
+    <Content Include="js\iosslider\_src\jquery.iosslider.min.js" />
+    <Content Include="js\jcarousel\jquery-1.4.2.min.js" />
+    <Content Include="js\jcarousel\jquery.jcarousel.min.js" />
+    <Content Include="js\jcarousel\next-horizontal-two.png" />
+    <Content Include="js\jcarousel\next-horizontal.png" />
+    <Content Include="js\jcarousel\prev-horizontal-two.png" />
+    <Content Include="js\jcarousel\prev-horizontal.png" />
+    <Content Include="js\jcarousel\skin.css" />
+    <Content Include="js\jcarousel\skin2.css" />
+    <Content Include="js\jquery.nav.js" />
+    <Content Include="js\jquery.scrollto.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\mainmenu\jquery-1.7.1.min.js" />
+    <Content Include="js\portfolio\isotope.css" />
+    <Content Include="js\portfolio\jquery.isotope.js" />
+    <Content Include="js\portfolio\lib\jquery-1.9.0.min.js" />
+    <Content Include="js\portfolio\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="js\portfolio\source\blank.gif" />
+    <Content Include="js\portfolio\source\fancybox_loading.gif" />
+    <Content Include="js\portfolio\source\fancybox_overlay.png" />
+    <Content Include="js\portfolio\source\fancybox_sprite.png" />
+    <Content Include="js\portfolio\source\helpers\fancybox_buttons.png" />
+    <Content Include="js\portfolio\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="js\portfolio\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="js\portfolio\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="js\portfolio\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="js\portfolio\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="js\portfolio\source\jquery.fancybox.css" />
+    <Content Include="js\portfolio\source\jquery.fancybox.js" />
+    <Content Include="js\portfolio\source\jquery.fancybox.pack.js" />
+    <Content Include="js\revolutionslider\css\fullwidth.css" />
+    <Content Include="js\revolutionslider\images\tiles\accordionswitch.png" />
+    <Content Include="js\revolutionslider\images\tiles\bgtile.jpg" />
+    <Content Include="js\revolutionslider\images\tiles\bullets_boxed.png" />
+    <Content Include="js\revolutionslider\images\tiles\bullets_round.png" />
+    <Content Include="js\revolutionslider\images\tiles\bullets_square.png" />
+    <Content Include="js\revolutionslider\images\tiles\buynow.png" />
+    <Content Include="js\revolutionslider\images\tiles\check.png" />
+    <Content Include="js\revolutionslider\images\tiles\dragnotch.png" />
+    <Content Include="js\revolutionslider\images\tiles\dragsliderbg.png" />
+    <Content Include="js\revolutionslider\images\tiles\logo.png" />
+    <Content Include="js\revolutionslider\images\tiles\minishadow.png" />
+    <Content Include="js\revolutionslider\images\tiles\minishadow2.png" />
+    <Content Include="js\revolutionslider\images\tiles\minishadow3.png" />
+    <Content Include="js\revolutionslider\images\tiles\preview1.png" />
+    <Content Include="js\revolutionslider\images\tiles\preview2.png" />
+    <Content Include="js\revolutionslider\images\tiles\preview3.png" />
+    <Content Include="js\revolutionslider\images\tiles\radio.png" />
+    <Content Include="js\revolutionslider\images\tiles\selectpreview.png" />
+    <Content Include="js\revolutionslider\images\tiles\shadow3_large.png" />
+    <Content Include="js\revolutionslider\images\tiles\sliderconfigheadline.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_3dch.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_3dcv.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_bg.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_boxes.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_cubic.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_curtainone.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_curtainthree.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_curtaintwo.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_custom.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_fade.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_flyin.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_mixed.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_papercut.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slidedown.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slideleft.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slideright.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slideup.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slotfadehorizontal.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slotfadevertical.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slotslidehorizontal.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slotslidevertical.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slotzoomhorizontal.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_slotzoomvertical.png" />
+    <Content Include="js\revolutionslider\images\tiles\transition_turnoff.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrowleft.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrowright.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrow_left.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrow_right.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\black50.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\bullet.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\bullets.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\bullets2.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\coloredbg.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\grain.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\large_left.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\large_right.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\loader.gif" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\loader2.gif" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\navigdots.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\shadow1.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\shadow2.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\shadow3.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\small_left.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\small_right.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\timer.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\timerdot.png" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\transparent.jpg" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\white50.png" />
+    <Content Include="js\revolutionslider\rs-plugin\css\settings.css" />
+    <Content Include="js\revolutionslider\rs-plugin\images\decor_inside.png" />
+    <Content Include="js\revolutionslider\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="js\revolutionslider\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="js\revolutionslider\rs-plugin\images\gradient\g30.png" />
+    <Content Include="js\revolutionslider\rs-plugin\images\gradient\g40.png" />
+    <Content Include="js\revolutionslider\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="js\sticky-menu\core.css" />
+    <Content Include="js\sticky-menu\core.js" />
+    <Content Include="js\sticky-menu\jquery_004.js" />
+    <Content Include="js\sticky-menu\modernizr.custom.75180.js" />
+    <Content Include="js\sticky-menu\themelock.txt" />
+    <Content Include="js\style-switcher\color-switcher.css" />
+    <Content Include="js\style-switcher\colors-swi.png" />
+    <Content Include="js\style-switcher\jquery-1.js" />
+    <Content Include="js\style-switcher\styleselector.js" />
+    <Content Include="js\style-switcher\styleswitcher.js" />
+    <Content Include="js\testimonials\fadeeffect.css" />
+    <Content Include="js\thumbszoom\custom.js" />
+    <Content Include="js\thumbszoom\jquery-1.3.1.min.js" />
+    <Content Include="js\thumbszoom\thumbzoom.css" />
+    <Content Include="js\universal\jquery.js" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Site.Master" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="images\blog\Thumbs.db" />
+    <Content Include="images\elements\Thumbs.db" />
+    <Content Include="images\sliders\revolution\Thumbs.db" />
+    <Content Include="images\sliders\Thumbs.db" />
+    <Content Include="images\Thumbs.db" />
+    <Content Include="js\jcarousel\Thumbs.db" />
+    <Content Include="js\portfolio\source\helpers\Thumbs.db" />
+    <Content Include="js\portfolio\source\Thumbs.db" />
+    <Content Include="js\revolutionslider\images\tiles\Thumbs.db" />
+    <Content Include="js\revolutionslider\rs-plugin\assets\Thumbs.db" />
+    <Content Include="js\revolutionslider\rs-plugin\images\gradient\Thumbs.db" />
+    <Content Include="js\revolutionslider\rs-plugin\images\Thumbs.db" />
+    <Content Include="js\sticky-menu\themelock.url" />
+    <Content Include="js\style-switcher\Thumbs.db" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\language.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>language.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\language.ja-jp.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>language.ja-jp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\language.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>language.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\language.ja-jp.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>language.ja-jp.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55296</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55296/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
